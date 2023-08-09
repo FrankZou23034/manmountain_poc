@@ -78,4 +78,8 @@ CREATE TABLE public.dw_nanshan_insureddetails (
 "Nationality" VARCHAR(50),
 "MaritalStatus" VARCHAR(20)
 )WITH(appendoptimized=TRUE)
-DISTRIBUTED BY ("InsuredID");
+DISTRIBUTED BY ("InsuredID")
+PARTITION BY RANGE ("EffectiveDate")
+  (START (date '1960-01-01') INCLUSIVE
+    END (date '2030-01-01') EXCLUSIVE
+    EVERY (INTERVAL '10 year') );
