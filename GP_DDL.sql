@@ -88,26 +88,26 @@ PARTITION BY RANGE ("EffectiveDate")
 
 DROP external table if exists public.ext_minio_nanshan_json_output;
 CREATE writable EXTERNAL TABLE public.ext_minio_nanshan_json_output(
-  ""InsuredID"" INTEGER,
-  ""InsuredName"" VARCHAR(50),
-  ""Gender"" VARCHAR(10),
-  ""DateOfBirth"" DATE,
-  ""Occupation"" VARCHAR(50),
-  ""Address"" VARCHAR(100),
-  ""Phone"" VARCHAR(20),
-  ""Email"" VARCHAR(50),
-  ""Nationality"" VARCHAR(50),
-  ""MaritalStatus"" VARCHAR(20),
-  ""PolicyiD"" INTEGER,
-  ""InsurediD"" INTEGER,
-  ""PolicyNumber"" INTEGER,
-  ""PolicyType"" INTEGER,
-  ""EffectiveDate"" VARCHAR(10),
-  ""ExpiryDate"" VARCHAR(10),
-  ""PaymentStatus"" VARCHAR(50),
-  ""CoverageAmount"" INTEGER,
-  ""TotalPremium"" INTEGER,
-  ""InsuranceProducts"" INTEGER 
+  "InsuredID" INTEGER,
+  "InsuredName" VARCHAR(50),
+  "Gender" VARCHAR(10),
+  "DateOfBirth" DATE,
+  "Occupation" VARCHAR(50),
+  "Address" VARCHAR(100),
+  "Phone" VARCHAR(20),
+  "Email" VARCHAR(50),
+  "Nationality" VARCHAR(50),
+  "MaritalStatus" VARCHAR(20),
+  "PolicyiD" INTEGER,
+  "InsurediD" INTEGER,
+  "PolicyNumber" INTEGER,
+  "PolicyType" INTEGER,
+  "EffectiveDate" VARCHAR(10),
+  "ExpiryDate" VARCHAR(10),
+  "PaymentStatus" VARCHAR(50),
+  "CoverageAmount" INTEGER,
+  "TotalPremium" INTEGER,
+  "InsuranceProducts" INTEGER 
 )  LOCATION('pxf://nanshan/nanshanlife_file_output?PROFILE=s3:csv&SERVER=minio')
 ON ALL
 FORMAT 'CSV'  ENCODING 'UTF8';
